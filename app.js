@@ -45,10 +45,11 @@ app.use(`${api}/orders`, ordersRouter)
 
 
 mongoose.connect(process.env.MONGO_ATLAS_CONNECTION_URL).then(() => {
-    console.log("MongoDB Atlast Connection is ready...");
+    console.log("MongoDB Atlast Connection is ready. . .");
 }).catch((err) => {
     console.log(err);
 });
+
 
 const PORT = process.env.DB_PORT || 3000
 app.listen(PORT, () => {
