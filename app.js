@@ -51,7 +51,7 @@ mongoose.connect(process.env.MONGO_ATLAS_CONNECTION_URL).then(() => {
 });
 
 
-const PORT = process.env.DB_PORT || 3000
+const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
     console.log(api);
     console.log("eshop nodejs server is running at: " + host);
