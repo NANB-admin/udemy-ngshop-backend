@@ -43,6 +43,15 @@ const uploadOptions = multer({ storage: storage })
 get products
 */
 router.get(`/`, async (req, res) => {
+
+    var ipAddr = req.headers["x-forwarded-for"];
+    if (ipAddr) {
+        var list = ipAddr.split(",");
+        ipAddr = list[list.length - 1];
+    } else {
+        ipAddr = req.connection.remoteAddress;
+    }
+    console.log(ipAddr);
     /*
     Note: checking path URL for query param == category - if yes - split the param values on ','
     */
