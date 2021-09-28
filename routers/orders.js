@@ -5,6 +5,9 @@ const { Product } = require('../models/product');
 const stripe = require('stripe')('sk_test_51JcIwxEtYX566LWVgEj0sJSjeZ895NPH9cFNHY8G2svU30Zwq3OU57WY6Pn6MyjyEqP1L4mAvMjVxFwONysxDn3400oTrxiJME');
 const router = express.Router();
 
+//http://localhost/
+const angularURL = 'http:nanb.link/';
+
 /*
 Get All Orders
 */
@@ -61,8 +64,8 @@ router.post('/create-checkout-session', async (req, res) => {
         payment_method_types: ['card'],
         line_items: lineItems,
         mode: 'payment',
-        success_url: 'http://localhost:4200/success',
-        cancel_url: 'http://localhost:4200/error'
+        success_url: `${angularURL}success`,
+        cancel_url: `${angularURL}error`
     })
 
     res.json({ id: stripeSession.id });
