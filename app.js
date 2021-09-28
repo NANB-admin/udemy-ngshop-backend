@@ -29,7 +29,7 @@ app.use(errorHandler);
 app.use('/public/uploads', express.static(__dirname + '/public/uploads'));
 
 const host = process.env.LOCALHOST_URL;
-const api = process.env.API_URL;
+const api = '/api/v1';//process.env.API_URL;
 
 // Middleware
 app.use(express.json());
@@ -43,8 +43,9 @@ app.use(`${api}/users`, usersRouter)
 app.use(`${api}/orders`, ordersRouter)
 
 
-
-mongoose.connect(process.env.MONGO_ATLAS_CONNECTION_URL).then(() => {
+const heroku_db_url = "mongodb+srv://shop-user:QCmxmoQ7V97kEt3Q@eshop.bnniy.mongodb.net/eshop-db-heroku?retryWrites=true&w=majority";
+//process.env.MONGO_ATLAS_CONNECTION_URL
+mongoose.connect(heroku_db_url).then(() => {
     console.log("MongoDB Atlast Connection is ready. . .");
     console.log("Connected to DB: " + process.env.DB_NAME)
 }).catch((err) => {

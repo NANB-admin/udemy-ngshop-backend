@@ -1,8 +1,8 @@
 const expressJwt = require('express-jwt');
 
 function authJwt() {
-    const secret = process.env.secret;
-    const api = process.env.API_URL;
+    const secret = 'nanb-ecommer-app-secret-jwt-key'//process.env.secret;
+    const api = '/api/v1';
     return expressJwt({
         secret,
         /* algorithms value from from jwt.io website */
