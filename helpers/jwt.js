@@ -10,27 +10,27 @@ function authJwt() {
         isRevoked: isRevoked,
     }).unless({
         path: [
+            {
+                /*regex express for all api urls paths */
+                url: /(.*)/,
+            },
+            // `${api}/users/login`,
+            // `${api}/users/register`,
             // {
-            //     /*regex express for all api urls paths */
-            //     url: /(.*)/,
+            //     /*regex express for all api urls for product related paths */
+            //     url: /\/api\/v1\/product(.*)/,
+            //     methods: ['GET', 'OPTIONS']
             // },
-            `${api}/users/login`,
-            `${api}/users/register`,
-            {
-                /*regex express for all api urls for product related paths */
-                url: /\/api\/v1\/product(.*)/,
-                methods: ['GET', 'OPTIONS']
-            },
-            {
-                /*regex express for all api urls for category related paths */
-                url: /\/api\/v1\/categories(.*)/,
-                methods: ['GET', 'OPTIONS']
-            },
-            {
-                /*regex express for all api urls for category related paths */
-                url: /\/public\/uploads\/(.*)/,
-                methods: ['GET', 'OPTIONS']
-            }
+            // {
+            //     /*regex express for all api urls for category related paths */
+            //     url: /\/api\/v1\/categories(.*)/,
+            //     methods: ['GET', 'OPTIONS']
+            // },
+            // {
+            //     /*regex express for all api urls for category related paths */
+            //     url: /\/public\/uploads\/(.*)/,
+            //     methods: ['GET', 'OPTIONS']
+            // }
         ]
     })
 }
