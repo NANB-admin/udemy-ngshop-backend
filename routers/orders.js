@@ -5,8 +5,8 @@ const { Product } = require('../models/product');
 const stripe = require('stripe')('sk_test_51JcIwxEtYX566LWVgEj0sJSjeZ895NPH9cFNHY8G2svU30Zwq3OU57WY6Pn6MyjyEqP1L4mAvMjVxFwONysxDn3400oTrxiJME');
 const router = express.Router();
 
-//http://localhost/
-const angularURL = 'http:nanb.link/';
+//http://localhost:4200/
+const angularURL = 'http:nanb.link:4200/';
 
 /*
 Get All Orders
