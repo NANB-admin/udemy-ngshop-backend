@@ -64,8 +64,8 @@ router.post('/create-checkout-session', async (req, res) => {
         payment_method_types: ['card'],
         line_items: lineItems,
         mode: 'payment',
-        success_url: `${angularURL}success`,
-        cancel_url: `${angularURL}error`
+        success_url: 'http://nanb.link:4200/success',
+        cancel_url: 'http://nanb.link:4200/error'
     })
 
     res.json({ id: stripeSession.id });
