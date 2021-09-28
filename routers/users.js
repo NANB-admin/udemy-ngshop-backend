@@ -124,7 +124,7 @@ Login API
 */
 router.post('/login', async (req, res) => {
     const user = await User.findOne({ email: req.body.email });
-    const secret = process.env.secret;
+    const secret = 'nanb-ecommer-app-secret-jwt-key';//process.env.secret;
     if (!user) {
         return res.status(400).send('User not found');
     }
