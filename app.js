@@ -43,7 +43,7 @@ app.use(`${api}/users`, usersRouter)
 app.use(`${api}/orders`, ordersRouter)
 
 
-const heroku_db_url = "mongodb+srv://shop-user:QCmxmoQ7V97kEt3Q@eshop.bnniy.mongodb.net/eshop-db-heroku?retryWrites=true&w=majority";
+const heroku_db_url = "<mongo_db_connection_url>";
 //process.env.MONGO_ATLAS_CONNECTION_URL
 mongoose.connect(heroku_db_url).then(() => {
     console.log("MongoDB Atlast Connection is ready. . .");
