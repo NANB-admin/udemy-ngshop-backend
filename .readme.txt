@@ -1,3 +1,10 @@
+------------------------
+start backend app
+------------------------
+	- npm start
+
+
+
 add readme
 
 update
